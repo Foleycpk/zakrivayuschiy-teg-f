@@ -10,12 +10,36 @@
 
 */
 
+:root {
+  width: 100%;
+}
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
   font-weight: 400;
   font-variation-settings: "wght" var(--card-text-font-weight, 400);
-
+  background-color: #fff;
+  background: linear-gradient(180deg, #e7e7e7 0%, #1a1a1a 100%), url('../images/background_desktop.png');
 }
 
+.header {
+  display: grid;
+  place-items: center;
+  width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  margin: 100px auto;  
+  background-color: #fff;
+  border: 2px solid #000;
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(0rem, -2.6518rem + 11.3146vw, 7.53125rem);
+  font-family: var(--accent-font, sans-serif);
+  text-transform: uppercase;
+  gap: 20px;
+} 
+
+.header__logo {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
