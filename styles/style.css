@@ -18,7 +18,9 @@
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
   font-weight: 400;
-  font-variation-settings: "wght" var(--card-text-font-weight, 400);
+  font-variation-settings: "wght" var(--card-text-font-weight-normal, 400);
+  font-size: var(--main-font-size, 18px);
+  color: var(--main-font-color, #000);
   background-color: #fff;
   background: linear-gradient(180deg, #e7e7e7 0%, #1a1a1a 100%), url('../images/background_desktop.png');
 }
@@ -26,7 +28,7 @@
 .header {
   display: grid;
   place-items: center;
-  width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  width: var(--section-width, clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem));
   margin: 100px auto;  
   background-color: #fff;
   border: 2px solid #000;
@@ -42,4 +44,184 @@
 
 .header__title {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.cards {
+  width: var(--section-width, clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem));
+  margin: 0 auto;
+}
+
+.card {
+  border: 2px solid #000;
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+
+.card__title {
+  font-variation-settings: "wght" var(--card-text-font-weight-bold, 700);
+  font-size: var(--main-font-size, 18px);
+  margin: 3px 24px 3px 10px;
+}
+
+.card__image-container {
+  position: relative;
+  width: 100%;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__watermark {
+  position: absolute;
+  top: 25px;
+  right: clamp(1.5625rem, 1.8266rem + -1.1268vw, 0.8125rem);
+  font-family: var(--accent-font, sans-serif);
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: 1px 0 var(--text-stroke-color, #fff), -1px 0 var(--text-stroke-color, #fff), 0 1px var(--text-stroke-color, #fff), 0 -1px var(--text-stroke-color, #fff);
+}
+
+@supports((text-stroke: 1px #000) or (-webkit-text-stroke: 1px #000)) {
+  .card__watermark {
+    -webkit-text-stroke: 1px var(--text-stroke-color, #fff);
+    text-stroke: 1px var(--text-stroke-color, #fff);
+    text-shadow: none;
+  }
+} 
+
+.card__description {
+  padding: 25px;
+}
+
+.card__text {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.card__like-bar {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  align-content: center;
+}
+
+.like-icon {
+  width: 39px;
+  height: 36px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__like-button {
+  width: 169px;
+  height: 38px;
+  border: 2px solid #000;
+  padding: 12.5px 37px;
+  width: 130px;
+  height: 38px;
+  font-family: var(--accent-font, sans-serif);
+  line-height: 90%;
+  color: inherit;
+  text-align: center;
+  font-size: 14px;
+  font-variation-settings: inherit;
+}
+
+.button {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  font-family: var(--accent-font, sans-serif);
+  font-size: 14px;
+  color: inherit;
+}
+
+.save-button {
+  width: clamp(19.125rem, 18.4648rem + 2.8169vw, 21rem);
+  gap: 8px;
+  margin-bottom: 103px;
+  line-height: 90%;
+  padding: 15px 0;
+}
+
+
+.floppy-image {
+  width: 21px;
+  height: 21px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.popup-insert-floppy[open] {
+  display: grid;
+  grid-template-rows: min-content min-content;
+  grid-template-columns: min-content 1fr;
+  border: 2px solid #000;
+  align-items: center;
+  justify-content: end;
+  width: clamp(22.0625rem, 22.3266rem + -1.1268vw, 21.3125rem);
+  padding: 30px clamp(2.625rem, 2.8891rem + -1.1268vw, 1.875rem);
+  column-gap: 20px;
+  row-gap: 30px;
+}
+
+.popup-insert-floppy[open]::backdrop {
+  background: #000;
+  opacity: 0.75;
+}
+
+.popup-insert-floppy[open] .floppy-image {
+  width: 39px;
+  height: 39px;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.popup-insert-floppy__text {
+  font-family: var(--accent-font, sans-serif);
+  font-size: 14px;
+  color: inherit;
+  line-height: 150%;
+  text-transform: uppercase;
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.confirm-button {
+  grid-row: 2;
+  grid-column: span 2;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.confirm-button__text {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-align: center;
+  line-height: 90%;
+  text-transform: uppercase;
+}
+
+@media (width <= 375px) {
+  .header {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card__title {
+    margin: 3.5px 10px 5.5px 10px;
+  }
 }

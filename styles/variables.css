@@ -4,5 +4,10 @@
   --main-font: "Inter", sans-serif;
   --accent-font: "Press Start 2P", sans-serif;
   --card-title-font-weight: 700;
-  --card-text-font-weight: 400;
+  --card-text-font-weight-normal: 400;
+  --card-text-font-weight-bold: 700;
+  --section-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  --main-font-size: 18px;
+  --main-font-color: #000;
+  --text-stroke-color: #fff;
 }
