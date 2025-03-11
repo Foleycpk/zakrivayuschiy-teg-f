@@ -10,18 +10,6 @@
 
 */
 
-@keyframes like-heart-scale {
-  to {
-    scale: 1.25;
-  }
-}
-
-@keyframes like-sparks-opacity {
-  to {
-    opacity: 1;
-  }
-}
-
 :root {
   width: 100%;
 }
@@ -409,7 +397,7 @@
   }
 
   .popup-insert-floppy[open] {
-    gap: 25px;
+    gap: 30px 20px;
     padding: 30px 40px;
   }
 }
